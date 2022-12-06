@@ -14,15 +14,10 @@ def part1():
     size = j - i + 1
 
     if s[j] in count and count[s[j]] >= i:
-      newI = count[s[j]] + 1 # move to the new i
-      del count[s[i]] # but first undo the i check
-      i = newI
-      count[s[j]] = j
-    else:
-      count[s[j]] = j
-
-      if size == 4:
-        return j+1
+      i = count[s[j]] + 1 # move to the new i
+    elif size == 4:
+      return j+1
+    count[s[j]] = j
 
     j += 1
 
@@ -30,7 +25,6 @@ def part2():
   file = open('input6.txt')
 
   lines = file.readlines()
-  s = 'mjqjpqmgbljsphdztnvjfqwrcgsmlb'
   s = lines[0]
   n = len(s)
 
@@ -45,15 +39,11 @@ def part2():
     size = j - i + 1
 
     if s[j] in count and count[s[j]] >= i:
-      newI = count[s[j]] + 1 # move to the new i
-      del count[s[i]] # but first undo the i check
-      i = newI
-      count[s[j]] = j
-    else:
-      count[s[j]] = j
+      i = count[s[j]] + 1 # move to the new i
+    elif size == 14:
+      return j+1
 
-      if size == 14:
-        return j+1
+    count[s[j]] = j
 
     j += 1
 
