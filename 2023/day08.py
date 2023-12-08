@@ -90,6 +90,7 @@ def part2():
 
   print(found)
   # Find the least common multiple of `found`
+  print(math.lcm(*found))
 
 def part1():
   # lines = getLines('input08small.txt')
